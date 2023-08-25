@@ -1,0 +1,115 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "PLCS系统管理",
+      "children": [
+        {
+          "id": 2,
+          "pid": 1,
+          "name": "PTS",
+          "level": 0,
+          "path": "10.10.34.31/pts",
+          "children": [
+            {
+              "name": "订单管理",
+              "id": 10,
+              "pid": 2,
+              "level": 1,
+              "fold": "/order",
+              "component": "index",
+              "status": 1,
+              "hidden": false,
+              "api": "/api/order",
+              "method": "get",
+              "children": [
+                {
+                  "name": "订单查询",
+                  "status": "0",
+                  "id": 11,
+                  "pid": 10,
+                  "level": 3
+                },
+                {
+                  "name": "订单新增",
+                  "status": "0",
+                  "id": 9,
+                  "pid": 10,
+                  "level": 3,
+                  "fold": "/order",
+                  "component": "orderAdd"
+                },
+                {
+                  "name": "订单修改",
+                  "status": "0",
+                  "id": 13,
+                  "pid": 10,
+                  "level": 3,
+                  "fold": "/order",
+                  "component": "orderAdd"
+                },
+                {
+                  "name": "查看订单详情",
+                  "status": "1",
+                  "id": 14,
+                  "pid": 10,
+                  "level": 3,
+                  "fold": "/order",
+                  "component": "orderDetail"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "pid": 1,
+          "name": "QDS",
+          "path": "10.10.34.31/qds",
+          "level": 0,
+          "children": [
+            {
+              "name": "一级菜单",
+              "id": 22,
+              "pid": 3,
+              "level": 1,
+              "children": [
+                {
+                  "name": "二级菜单",
+                  "id": 23,
+                  "pid": 22,
+                  "level": 2,
+                  "children": [
+                    {
+                      "name": "编辑",
+                      "status": 0,
+                      "id": 24,
+                      "pid": 22,
+                      "level": 3,
+                      "api": "/api/order",
+                      "method": "get"
+                    }
+                  ]
+                },
+                {
+                  "name": "二级菜单隐藏",
+                  "id": 25,
+                  "pid": 22,
+                  "level": 2,
+                  "hidden": true
+                },
+                {
+                  "name": "一级搜索下拉选项",
+                  "id": 25,
+                  "pid": 22,
+                  "level": 3,
+                  "hidden": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

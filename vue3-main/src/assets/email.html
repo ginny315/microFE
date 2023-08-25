@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .email {
+        width: 600px;
+      }
+      .content {
+        padding: 64px;
+      }
+      p {
+        font-size: 16px;
+        line-height: 1.5;
+        margin: 0;
+        color: #3d3d3d;
+      }
+      .pb16 {
+        padding-bottom: 16px;
+      }
+      .signature {
+        margin-top: 32px;
+        border-left: 2px solid #467eff;
+        padding-left: 16px;
+      }
+      .signature p {
+        font-size: 14px;
+      }
+      .code {
+        text-align: center;
+        padding: 16px;
+        margin: 32px 0;
+        background: #f6f8fa;
+        font-size: 20px;
+        font-weight: 600;
+      }
+      .time {
+        font-weight: 600;
+        padding: 0 8px;
+        color: #000;
+      }
+      .color-grey {
+        color: #606266;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="email">
+      <div class="content">
+        <p class="pb16">尊敬的用户，你好！</p>
+        <p>我们收到了您的重置密码请求。为确保账号安全，请进行身份验证。您的验证码是：</p>
+        <div class="code">1234</div>
+        <p class="pb16"
+          >请在<span class="time">10分钟</span
+          >内输入上述验证码以完成身份验证，并继续重置密码流程。</p
+        >
+        <p class="color-grey">如果您没有提出重置密码请求，请忽略此邮件。</p>
+        <div class="signature">
+          <p>此致，</p>
+          <p>PLCS开发团队</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
