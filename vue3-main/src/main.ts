@@ -50,13 +50,26 @@ app.directive('loadmore', {
 })
 app.use(router).mount('#app')
 
-registerMicroApps([
+registerMicroApps(
+  [
+    {
+      name: 'app-demo',
+      entry: 'http://127.0.0.1:8083',
+      container: '#subApp',
+      activeRule: '/app-demo'
+    }
+  ],
   {
-    name: 'app-demo',
-    entry: 'http://localhost:8081',
-    container: '#subApp',
-    activeRule: '/app-demo'
+    beforeLoad: async (app) => {
+      console.log('before load', app)
+      document.title = 'vue3+vite+ts'
+    },
+    beforeMount: [
+      async (app) => {
+        console.log('before mount', app.name)
+      }
+    ]
   }
-])
+)
 
 start()

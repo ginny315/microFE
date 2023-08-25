@@ -36,7 +36,6 @@ export const constantRoutes: Array<RouteRecordRaw> = [
     component: defineAsyncComponent(() => import('@/views/home/callback.vue')),
     meta: { hidden: true }
   },
-  { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound },
   {
     path: '/',
     component: SimpleLayout,
