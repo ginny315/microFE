@@ -7,10 +7,11 @@ import App from './App.vue'
 import { setupStore } from '@/store'
 import router from './router'
 import '@/permission'
+import Wujie from 'wujie-vue3'
 
 const env = import.meta.env
 const currentEnv = env.VITE_APP_TITLE
-let config = console.log(env, currentEnv)
+const config = console.log(env, currentEnv)
 
 const app = createApp(App)
 app.use(ElementUI, {
@@ -22,5 +23,4 @@ Object.keys(ElIconModules).forEach((key) => {
 })
 setupStore(app)
 
-app.use(router).mount('#app')
-
+app.use(router).use(Wujie).mount('#app')
