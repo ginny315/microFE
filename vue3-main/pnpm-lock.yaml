@@ -44,9 +44,6 @@ dependencies:
   pinia:
     specifier: ^2.0.33
     version: registry.npmmirror.com/pinia@2.1.6(typescript@4.9.5)(vue@3.3.4)
-  qiankun:
-    specifier: ^2.10.12
-    version: registry.npmmirror.com/qiankun@2.10.12
   qs:
     specifier: ^6.11.1
     version: registry.npmmirror.com/qs@6.11.2
@@ -3673,14 +3670,6 @@ packages:
       resolve-from: registry.npmmirror.com/resolve-from@4.0.0
     dev: true
 
-  registry.npmmirror.com/import-html-entry@1.15.1:
-    resolution: {integrity: sha512-flVVS3lQTaHUUEF/zByio0WHdJRMNwT/1sI48/ps9VVGWNn+oE1wuX+fBRZkXLKAeggVVmfU41MpgNnZ7I9nRg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/import-html-entry/-/import-html-entry-1.15.1.tgz}
-    name: import-html-entry
-    version: 1.15.1
-    dependencies:
-      '@babel/runtime': registry.npmmirror.com/@babel/runtime@7.22.10
-    dev: false
-
   registry.npmmirror.com/import-lazy@4.0.0:
     resolution: {integrity: sha512-rKtvo6a868b5Hu3heneU+L4yEQ4jYKLtjpnPeUdK7h0yzXGmyBTypknlkCvHFBqfX9YlorEiMM6Dnq/5atfHkw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/import-lazy/-/import-lazy-4.0.0.tgz}
     name: import-lazy
@@ -4752,17 +4741,6 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  registry.npmmirror.com/qiankun@2.10.12:
-    resolution: {integrity: sha512-PmRDyilEUxiU9XLTJBahtCIJMyiQea2/pK03wqeMYx/dOveLHimqY4pcILcmHlgVCOiUFjCKVzAQq8htJF4Vyg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/qiankun/-/qiankun-2.10.12.tgz}
-    name: qiankun
-    version: 2.10.12
-    dependencies:
-      '@babel/runtime': registry.npmmirror.com/@babel/runtime@7.22.10
-      import-html-entry: registry.npmmirror.com/import-html-entry@1.15.1
-      lodash: registry.npmmirror.com/lodash@4.17.21
-      single-spa: registry.npmmirror.com/single-spa@5.9.5
-    dev: false
-
   registry.npmmirror.com/qs@6.11.2:
     resolution: {integrity: sha512-tDNIz22aBzCDxLtVH++VnTfzxlfeK5CbqohpSqpJgj1Wg/cQbStNAz3NuqCs5vV+pjBsK4x4pN9HlVh7rcYRiA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/qs/-/qs-6.11.2.tgz}
     name: qs
@@ -5104,12 +5082,6 @@ packages:
     name: signal-exit
     version: 3.0.7
     dev: true
-
-  registry.npmmirror.com/single-spa@5.9.5:
-    resolution: {integrity: sha512-9SQdmsyz4HSP+3gs6PJzhkaMEg+6zTlu9oxIghnwUX3eq+ajq4ft5egl0iyR55LAmO/UwvU8NgIWs/ZyQMa6dw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/single-spa/-/single-spa-5.9.5.tgz}
-    name: single-spa
-    version: 5.9.5
-    dev: false
 
   registry.npmmirror.com/slash@3.0.0:
     resolution: {integrity: sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/slash/-/slash-3.0.0.tgz}

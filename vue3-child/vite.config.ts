@@ -8,42 +8,12 @@ import DefineOptions from 'unplugin-vue-define-options/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import { createStyleImportPlugin, ElementPlusResolve } from 'vite-plugin-style-import'
-import qiankun from 'vite-plugin-qiankun'
-import path from 'path'
-const useDevMode = true
-console.log('path=', path.join(process.cwd(), './vue3-main'))
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  // build: {
-  //   rollupOptions: {
-  //     input: 'src/main.ts'
-  //   }
-  // },
-  base: '/',
-  server: {
-    port: 8083,
-    open: true, //配置浏览器自动访问
-    cors: true,
-    headers: {
-      'Access-Control-Allow-Origin': '*'
-    },
-    proxy: {
-      '/api': {
-        target: 'http://10.10.34.31:8080',
-        changeOrigin: true,
-        secure: false,
-        rewrite: (path) => path.replace(/^\/api/, 'api')
-      }
-    },
-    hmr: !useDevMode,
-  },
   plugins: [
     vue(),
     VueJsx(),
-    qiankun('app-demo', {
-      useDevMode
-    }),
     Components({
       // 要搜索组件的目录的相对路径
       dirs: ['src/components'],
@@ -100,6 +70,7 @@ export default defineConfig({
       '@': resolve(__dirname, './src')
     }
   },
+  base: '/',
   build: {
     minify: 'terser',
     outDir: 'dist',
@@ -110,5 +81,23 @@ export default defineConfig({
         drop_console: false
       }
     }
+  },
+  server: {
+    host: 'localhost',
+    port: 8081,
+    open: true, //配置浏览器自动访问
+    cors: true,
+    headers: {
+      'Access-Control-Allow-Origin': '*'
+    },
+    proxy: {
+      '/api': {
+        target: 'http://10.10.34.31:8080',
+        changeOrigin: true,
+        secure: false,
+        rewrite: (path) => path.replace(/^\/api/, 'api')
+      }
+    },
+    hmr: true,
   }
 })

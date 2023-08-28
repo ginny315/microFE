@@ -8,19 +8,12 @@ import { setupStore } from '@/store'
 import router from './router'
 import '@/permission'
 
-const env = import.meta.env
-const currentEnv = env.VITE_APP_TITLE
-let config = console.log(env, currentEnv)
-
 const app = createApp(App)
 app.use(ElementUI, {
   locale: zh
 })
-
 Object.keys(ElIconModules).forEach((key) => {
   app.component(key, ElIconModules[key])
 })
 setupStore(app)
-
 app.use(router).mount('#app')
-
