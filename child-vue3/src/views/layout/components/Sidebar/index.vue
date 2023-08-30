@@ -2,11 +2,12 @@
   <el-scrollbar wrap-class="scrollbar-wrapper">
     <el-menu
       :default-active="activeMenu"
+      :default-openeds="['/']"
       text-color="#5E6166"
       active-text-color="#467EFF"
       background-color="#fff"
       :collapse="isCollapse"
-      unique-opened="false"
+      :unique-opened="false"
       collapse-transition
     >
       <sidebar-item
@@ -17,24 +18,31 @@
         :activeMenu="activeMenu"
       />
     </el-menu>
+    <!-- <div class="sidebar-blue">
+      <img src="@/assets/img/sidebar-blue.png" alt="" />
+    </div> -->
   </el-scrollbar>
 </template>
 
 <script setup lang="ts">
 import { useAppStore } from '@/store/modules/app'
+import { usePermissionStore } from '@/store/modules/permission'
 import SidebarItem from './sidebar-item.vue'
 
 const router = useRouter()
 const route = useRoute()
 const appStore = useAppStore()
-let menuList = router.options.routes
-// const activeMenu = computed(() => {
-//   const { meta, path } = route
-//   if (meta.activeMenu) {
-//     return meta.activeMenu
-//   }
-//   return path
+
+// const menuList = computed(() => {
+//   // return router.getRoutes()
+//   const routes = router.options.routes || []
+//   const menus = permissionStore.dynamicRoutes || []
+//   return routes.concat(menus)
 // })
+
+const menuList = router.options.routes
+console.log('menuList=', menuList)
+
 const isCollapse = computed(() => {
   const sidebar = appStore.getSidebar
   const isCollapse = !sidebar.opened
@@ -53,6 +61,8 @@ const activeMenu = computed(() => {
   }
   .scrollbar-wrapper {
     overflow-x: hidden !important;
+    padding-top: 16px;
+    background: #fff;
   }
   .el-scrollbar__view {
     height: 100%;
@@ -75,5 +85,17 @@ const activeMenu = computed(() => {
   height: 100%;
   width: 100% !important;
   padding-top: 4px;
+  // background-image: url('@/assets/img/sidebar-blue.png');
+}
+// .el-scrollbar__view {
+//   background-image: url('@/assets/img/sidebar-blue.png');
+// }
+.sidebar-blue {
+  position: absolute;
+  bottom: 0;
+  width: 208px;
+  img {
+    width: 100%;
+  }
 }
 </style>

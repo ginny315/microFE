@@ -3,7 +3,7 @@
     <Navbar type="normal" />
     <div class="main-wrapper">
       <Sidebar class="sidebar-container" />
-      <div class="main-container">
+      <div class="main-container" id="mainContainer">
         <AppMain />
       </div>
     </div>
@@ -11,7 +11,7 @@
 </template>
 
 <script setup lang="ts">
-import { AppMain, Navbar, Sidebar } from './components'
+import { AppMain, Navbar, Sidebar, Footer } from './components'
 import { useAppStore } from '@/store/modules/app'
 
 const appStore = useAppStore()
@@ -34,19 +34,21 @@ const classObj = computed(() => {
   background-color: #f1f5fb;
 }
 .main-wrapper {
+  width: 100%;
   height: 100%;
   min-height: 100%;
-  width: 100%;
+  // width: calc(100% - 210px);
   // min-width: 1366px;
   transition: margin-left 0.28s;
   margin-left: 210px;
   position: relative;
 }
 .main-container {
-  width: calc(100% - 208px);
-  padding-top: 64px;
+  padding-top: 40px;
   height: 100%;
+  width: calc(100vw - 210px);
   // overflow-y: scroll;
+  // overflow-x: hidden;
   overflow: auto;
   // scrollbar-width: none;
   // -ms-overflow-style: none;
@@ -63,15 +65,18 @@ const classObj = computed(() => {
   height: 100%;
   position: fixed;
   font-size: 0px;
-  top: 66px;
+  top: 40px;
   bottom: 0;
   left: 0;
   z-index: 1001;
   overflow: hidden;
 }
+.openSidebar {
+}
 .hideSidebar {
   .main-wrapper {
     margin-left: 64px;
+    width: calc(100% - 64px);
   }
   .sidebar-container {
     width: 64px !important;

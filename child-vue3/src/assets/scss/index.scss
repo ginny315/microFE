@@ -11,9 +11,10 @@
 
 // 内容块
 .app-main {
-  padding-bottom: 64px;
-  min-height: calc(100vh - 64px);
+  // padding-bottom: 64px;
+  // min-height: calc(100vh - 64px);
   width: 100%;
+  height: 100%;
   // min-width: 1158px;
   // width: calc(100vw - 208px);
 }
@@ -29,6 +30,8 @@
     padding: 0 !important;
   }
 }
+
+// 顶端搜索区域
 .handle-box {
   background-color: #fff;
   font-size: 14px;
@@ -37,22 +40,46 @@
   display: flex;
   justify-content: space-between;
 }
+// 顶端搜索区域-占据一行
 .handle-box-block {
   background-color: #fff;
   font-size: 14px;
   color: #5e6166;
   padding: 24px;
 }
-.table-box {
-  margin-top: 24px;
-  padding: 24px;
-  background-color: #fff;
+// 顶端搜索区域-文字占位
+.item-label {
+  margin-right: 12px;
 }
+// 顶端标题
 .head-box {
   color: #262729;
   font-weight: 500;
   font-size: 20px;
   padding-bottom: 24px;
+}
+// 底部提交区域
+.bottom-box {
+  position: fixed;
+  z-index: 999;
+  bottom: 0;
+  background-color: #fff;
+  width: calc(100vw - 208px);
+  height: 64px;
+  .confirm-box {
+    margin-right: 24px;
+  }
+}
+
+// 表格区域
+.table-box {
+  margin-top: 24px;
+  padding: 24px;
+  background-color: #fff;
+}
+.table-box2 {
+  padding: 24px;
+  background-color: #fff;
 }
 .table-emypt {
   width: 300px;
@@ -61,39 +88,57 @@
     width: 100%;
   }
 }
-
 .table-special {
-  padding-top: 24px;
+  margin-top: 24px;
 }
-
+.table-special .cell:empty::before,
+.table-special2 .cell:empty::before {
+  content: "--";
+  color: gray;
+}
 .pagination {
   margin-top: 20px;
-  margin-right: 40px;
   display: flex;
   justify-content: flex-end;
 }
 
+// 表格操作列按钮样式
+.el-dropdown {
+  cursor: pointer;
+}
+.moreBtn {
+  margin-left: 8px;
+  color: #467eff;
+}
+
+// 弹窗
 .dialog-footer {
   text-align: center;
 }
-
 .confirm-box {
   margin: 0 auto;
   display: flex;
-  justify-content: center;
-  padding-top: 32px;
+  justify-content: right;
+  padding-top: 16px;
 }
-.page-content-add {
-  background-color: #fff;
+.confirm-box-right {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 24px;
 }
-.page-form {
-  margin: 0 auto;
-  padding: 80px 0;
+
+.dialog-big {
+  .dialog-footer { 
+    .el-button {
+      width: 88px;
+    }
+  }
 }
+
+// 编辑页面
 .page-guide {
   background-color: #fff;
   padding-left: 24px;
-  width: 100%;
   min-width: 1158px;
   .sub-guide {
     vertical-align: top;
@@ -109,15 +154,33 @@
     padding-bottom: 24px;
   }
 }
+.page-guide-add {
+  padding-left: 24px;
+  width: 100%;
+  min-width: 1158px;
+  .title {
+    color: #262729;
+    font-size: 20px;
+    font-weight: 500;
+  }
+}
+.page-content-add {
+  background-color: #fff;
+}
+.page-form {
+  margin: 0 auto;
+  padding: 80px 0;
+}
 .form-tip {
   color: #969aa3;
   font-size: 14px;
   padding-left: 100px;
   margin-top: -16px;
 }
+
+// 上传文件 start
 .attachmentList {
-  // display: flex;
-  color: #a52a2a;
+  color: #606266;
   font-size: 12px;
   width: 100%;
   li {
@@ -125,9 +188,9 @@
     padding-left: 12px;
   }
 }
-
 .format-file-name {
   width: 240px;
+  height: 20px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow:ellipsis;
@@ -140,6 +203,8 @@
   text-overflow:ellipsis;
 }
 
+// 上传文件 end
+
 .product-name-format {
   max-width: 300px;
   white-space: nowrap;
@@ -147,12 +212,87 @@
   text-overflow:ellipsis;
 }
 
+// 备注样式
 .remark-break {
   word-break: break-all;
   white-space: pre-line
 }
 
+// 搜索相关 start
+.moreSelect {
+  border: 1px solid #dcdfe6;
+  width: 48px;
+  height: 32px;
+  padding: 8px;
+  display: flex;
+  margin-left: 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  img {
+    width: 100%;
+  }
+}
+.moreSelectActive {
+  border: 1px solid #3378ff;
+  width: 64px;
+  color: #3378ff;
+  font-size: 12px;
+  line-height: 14px;
+  height: 32px;
+  padding: 8px 8px;
+  display: flex;
+  justify-content: center;
+  margin-left: 12px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.search-block {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+.total {
+  margin-top: 16px;
+  display: inline-block;
+  line-height: 28px;
+  margin-right: 8px;
+}
+.grey-block {
+  margin-top: 8px;
+  display: inline-block;
+  background-color: #e5eaf1;
+  color: #4c5e7c;
+  padding: 4px;
+  margin-right: 8px;
+  .del {
+    margin-left: 8px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    vertical-align: text-bottom;
+  }
+}
+.search-clear {
+  margin-top: 8px;
+  display: inline-flex;
+  align-items: center;
+  color: #606266;
+  cursor: pointer;
+  span {
+    padding-left: 2px;
+  }
+  .el-icon {
+    padding-top: 1px;
+  }
+}
+// 搜索相关 end
 
+.ml12 {
+  margin-left: 12px;
+}
+
+.mt16 {
+  margin-top: 16px;
+}
 
 .bg-blue {
   background-color: #277FF0;
@@ -179,11 +319,20 @@
   color: #2AB941 ;
 }
 .color-grey {
-  color: #DCDFE6;
+  color: #808080;
 }
 .color-red {
   color: #f5593b;
 }
 .color-darkgrey {
   color: #5E6166; 
+}
+.color-del {
+  color: #E03838;
+}
+// 电装tag特殊样式
+.tag-electric {
+  background-color: #E6F7FF;
+  color: #369FFF;
+  border-color: #369FFF;
 }

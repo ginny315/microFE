@@ -12,7 +12,7 @@ export const constantRoutes: Array<RouteRecordRaw> = [
     name: 'user',
     component: BasicLayout,
     meta: {
-      title: '用户管理',
+      title: '第一管理',
       icon: 'userm',
       hidden: false,
       level: 1
@@ -21,6 +21,23 @@ export const constantRoutes: Array<RouteRecordRaw> = [
       {
         path: '/',
         component: defineAsyncComponent(() => import('@/views/user-manage/index.vue'))
+      }
+    ]
+  },
+  {
+    path: '/test',
+    name: 'test',
+    component: BasicLayout,
+    meta: {
+      title: '第二管理',
+      icon: 'userm',
+      hidden: false,
+      level: 1
+    },
+    children: [
+      {
+        path: '/test',
+        component: defineAsyncComponent(() => import('@/views/user-manage/test.vue'))
       }
     ]
   }

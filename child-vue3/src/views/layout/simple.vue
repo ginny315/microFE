@@ -4,11 +4,10 @@ import { AppMain, Navbar } from './components'
 
 <template>
   <div class="app-wrapper">
-    <Navbar type="simple" />
+    <Navbar type="normal" />
     <div class="main-wrapper">
       <div class="main-container">
         <AppMain />
-        <div class="main-footer"> </div>
       </div>
     </div>
   </div>
@@ -38,8 +37,5 @@ import { AppMain, Navbar } from './components'
 }
 .main-container::-webkit-scrollbar {
   display: none;
-}
-.main-footer {
-  padding-left: 416px;
 }
 </style>

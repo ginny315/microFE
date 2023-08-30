@@ -4,22 +4,11 @@
       <img v-if="is_superuser" src="@/assets/img/admin.png" class="user-avatar" />
       <img v-else src="@/assets/img/user.png" class="user-avatar" />
       <span>{{ userName }}</span>
+      <el-icon style="color: #fff; margin-left: 4px"><ArrowDown /></el-icon>
     </div>
     <template #dropdown>
       <el-dropdown-menu>
-        <el-dropdown-item @click="openPwd">
-          <div class="left-img">
-            <img src="@/assets/img/editpwd.png" alt="" />
-          </div>
-          <p>修改密码</p>
-        </el-dropdown-item>
-        <el-dropdown-item @click="openPhone" :disabled="is_superuser">
-          <div class="left-img">
-            <img src="@/assets/img/phone.png" alt="" />
-          </div>
-          <p>修改手机号</p>
-        </el-dropdown-item>
-        <el-dropdown-item divided @click="logout">
+        <el-dropdown-item @click="logout">
           <div class="left-img">
             <img src="@/assets/img/logout.png" alt="" />
           </div>
@@ -34,8 +23,8 @@
 import { useUserStoreWithOut } from '@/store/modules/user'
 
 const userStore = useUserStoreWithOut()
-const is_superuser = userStore.getUserInfo?.is_superuser || false
-const userName = userStore.getUserInfo?.username || 'User'
+const is_superuser = userStore.getUserInfo?.isAdmin || false
+const userName = userStore.getUserInfo?.displayName || 'User'
 const state = reactive({
   hoverInfo: false,
   hoverLogout: false
@@ -67,7 +56,7 @@ const openPhone = () => {
   padding: 0 8px;
   height: 100%;
   font-size: 18px;
-  color: #5a5e66;
+  color: #fff;
   vertical-align: text-bottom;
   &.hover-effect {
     cursor: pointer;
@@ -82,7 +71,7 @@ const openPhone = () => {
   vertical-align: middle;
   .avatar-wrapper {
     position: relative;
-    height: 64px;
+    height: 40px;
     display: flex;
     align-items: center;
     .user-avatar {
@@ -93,8 +82,9 @@ const openPhone = () => {
       vertical-align: middle;
     }
     span {
-      font-size: 14px;
+      font-size: 12px;
       padding-left: 8px;
+      color: #fff;
     }
     .el-icon-caret-bottom {
       cursor: pointer;

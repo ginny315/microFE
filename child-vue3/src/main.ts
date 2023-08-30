@@ -17,3 +17,14 @@ Object.keys(ElIconModules).forEach((key) => {
 })
 setupStore(app)
 app.use(router).mount('#app')
+
+declare global {
+  interface Window {
+    $wujie: {
+      props: Record<string, any>
+      bus: {
+        $emit: any
+      }
+    }
+  }
+}
